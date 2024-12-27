@@ -10,15 +10,23 @@ function App() {
     return savedNotes ? JSON.parse(savedNotes) : [];
   });
 
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem('darkMode');
+    return savedTheme ? JSON.parse(savedTheme) : false;
+  });
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [filter, setFilter] = useState('all');
-  const [darkMode, setDarkMode] = useState(false);
   const [editNote, setEditNote] = useState(null);
 
-   useEffect(() => {
+  useEffect(() => {
     localStorage.setItem('notes', JSON.stringify(notes));
   }, [notes]);
+
+  useEffect(() => {
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+  }, [darkMode]);
 
   useEffect(() => {
     document.body.className = darkMode ? 'dark-mode' : 'light-mode';
