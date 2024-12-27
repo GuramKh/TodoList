@@ -15,9 +15,13 @@ function App() {
     return savedTheme ? JSON.parse(savedTheme) : false;
   });
 
+  const [filter, setFilter] = useState(() => {
+    const savedFilter = localStorage.getItem('filter');
+    return savedFilter ? JSON.parse(savedFilter) : false
+  });
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const [filter, setFilter] = useState('all');
   const [editNote, setEditNote] = useState(null);
 
   useEffect(() => {
@@ -27,6 +31,10 @@ function App() {
   useEffect(() => {
     localStorage.setItem('darkMode', JSON.stringify(darkMode));
   }, [darkMode]);
+
+  useEffect(() => {
+    localStorage.setItem('filter', JSON.stringify(filter));
+  }, [filter]);
 
   useEffect(() => {
     document.body.className = darkMode ? 'dark-mode' : 'light-mode';
