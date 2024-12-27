@@ -1,0 +1,57 @@
+:root {
+  --bg-primary: #F7F7F7;
+  --bg-secondary: #6C63FF;
+  --text-primary: #252525;
+  --text-secondary: #F7F7F7;
+  --text-thirdly: #C3C1E5;
+  --border-color: #6C63FF;
+}
+
+.dark-mode {
+  --bg-primary: #252525;
+  --bg-secondary: #343a40;
+  --text-primary: #f8f9fa;
+  --border-color: #495057;
+}
+
+.app {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  transition: all 0.3s ease;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+}
+
+.add-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 28rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .controls {
+    flex-direction: column;
+  }
+  
+  .search-input, .filter-select {
+    width: 100%;
+  }
+}
