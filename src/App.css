@@ -10,6 +10,7 @@
 .dark-mode {
   --bg-primary: #252525;
   --bg-secondary: #343a40;
+  --bg-thirdly: #6C63FF;
   --text-primary: #f8f9fa;
   --border-color: #495057;
 }

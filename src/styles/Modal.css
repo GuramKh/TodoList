@@ -61,3 +61,14 @@
   color: var(--text-secondary);
   border: none;
 }
+
+.dark-mode .cancel-btn {
+  background: var(--bg-primary);
+  color: var(--bg-thirdly);
+  border: 1px solid var(--bg-thirdly);
+}
+
+.dark-mode .apply-btn {
+  background: var(--bg-thirdly);
+  color: var(--text-primary);
+}
